@@ -6,11 +6,11 @@
 
 ```javascript
 
+linspace(2, 3, 5)
+// => [ 2, 2.25, 2.5, 2.75, 3 ]
+
 linspace(2, 3, 4, {endpoint: false})
 // => [ 2, 2.25, 2.5, 2.75 ]
-
-linspace(2, 3, 5, {endpoint: false})
-// => [ 2, 2.25, 2.5, 2.75, 3 ]
 
 linspace(2, 4, 10, {dtype: 'int8'})
 // => [ 2, 2, 2, 2, 2, 3, 3, 3, 3, 4 ]
