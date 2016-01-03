@@ -5,19 +5,20 @@
 ## Example
 
 ```javascript
+var linspace = require('ndarray-linspace')
 
 linspace(2, 3, 5)
-// => [ 2, 2.25, 2.5, 2.75, 3 ]
+// => ndarray([2, 2.25, 2.5, 2.75, 3])
 
 linspace(2, 3, 4, {endpoint: false})
-// => [ 2, 2.25, 2.5, 2.75 ]
+// => ndarray([2, 2.25, 2.5, 2.75])
 
 linspace(2, 4, 10, {dtype: 'int8'})
-// => [ 2, 2, 2, 2, 2, 3, 3, 3, 3, 4 ]
+// => ndarray([2, 2, 2, 2, 2, 3, 3, 3, 3, 4])
 
 var y = pool.zeros([5])
 linspace(y, 1, 3, 5)
-// y => [ 1, 1.5, 2, 2.5, 3 ]
+// y => ndarray([1, 1.5, 2, 2.5, 3])
 
 var y = pool.zeros([2, 2])
 linspace(y, 0, 1, 2)
