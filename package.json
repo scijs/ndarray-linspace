@@ -1,0 +1,30 @@
+{
+  "name": "ndarray-linspace",
+  "version": "1.0.0",
+  "description": "Fill an ndarray with equally spaced values",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && mocha test/*"
+  },
+  "keywords": [
+    "ndarray",
+    "linspace"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/scijs/ndarray-linspace.git"
+  },
+  "author": "Ricky Reusser",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "ndarray": "^1.0.18",
+    "ndarray-tests": "^1.3.0",
+    "standard": "^5.4.1"
+  },
+  "dependencies": {
+    "ndarray-fill": "^1.0.1",
+    "ndarray-scratch": "^1.2.0"
+  }
+}
