@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "ndarray-fill": "^1.0.1",
-    "ndarray-scratch": "^1.2.0"
+    "ndarray-scratch": "^1.2.0",
+    "util-extend": "^1.0.1"
   }
 }

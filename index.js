@@ -2,6 +2,7 @@
 
 var pool = require('ndarray-scratch')
 var fill = require('ndarray-fill')
+var extend = require('util-extend')
 
 module.exports = linspace
 
@@ -13,18 +14,21 @@ var defaults = {
 function linspace () {
   var start, end, n, options, output
 
+  options = {}
+  extend(options, defaults)
+
   if (Number.isFinite(arguments[0])) {
     start = arguments[0]
     end = arguments[1]
     n = arguments[2]
-    options = Object.assign({}, defaults, arguments[3] || {})
+    extend(options, arguments[3] || {})
     output = pool.zeros([n], options.dtype)
   } else {
     output = arguments[0]
     start = arguments[1]
     end = arguments[2]
     n = arguments[3]
-    options = Object.assign({}, defaults, arguments[4] || {})
+    extend(options, arguments[4] || {})
 
     if (output.shape[0] !== n) {
       throw new Error('number of values (' + n + ') must match the first dimension of the output (' + output.shape[0] + ')')
