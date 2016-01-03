@@ -41,7 +41,7 @@ describe('linspace', function () {
   })
 
   it("throws an error if the size of the first dimension doesn't match the number of points", function () {
-    var x = pool.zeros([2,2])
+    var x = pool.zeros([2, 2])
     assert.throws(function () {
       linspace(x, 0, 1, 10)
     }, Error, 'must match')
