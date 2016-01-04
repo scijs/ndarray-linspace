@@ -35,7 +35,7 @@ npm install ndarray-linspace
 
 ## API
 
-#### require('ndarray-linspace')([output,] start, end, steps[, options])
+#### `require('ndarray-linspace')([output,] start, end, steps[, options])`
 An array of equally spaced values.
 
 Arguments:
