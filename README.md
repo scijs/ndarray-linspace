@@ -24,7 +24,6 @@ var y = pool.zeros([2, 2])
 linspace(y, 0, 1, 2)
 // y => [ 0, 0 ]
 //      [ 1, 1 ]
-
 ```
 
 ## Installation
@@ -38,7 +37,7 @@ npm install ndarray-linspace
 #### `require('ndarray-linspace')([output,] start, end, steps[, options])`
 An array of equally spaced values.
 
-Arguments:
+**Arguments**:
 - `output` (options): if provided, the destination array to be filled with values. If the number of dimensions is greater than one, then the length of the first dimension must match the number of values and the entire ndarray will be filled with the linspace corresponding to the index of the first dimension.
 - `start`: starting value of the interval
 - `end`: ending value of the interval
@@ -46,6 +45,8 @@ Arguments:
 - `options` (optional): A hash of options. Options are:
   - `dtype`: dtype of output array (only used if output array not specified)
   - `endpoint` (boolean): whether the output contains the endpoint of the interval
+
+**Returns**: A reference to the output
 
 ## License
 &copy; 2015 Ricky Reusser. MIT License.
