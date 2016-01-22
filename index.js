@@ -17,7 +17,7 @@ function linspace () {
   options = {}
   extend(options, defaults)
 
-  if (Number.isFinite(arguments[0])) {
+  if (isFinite(arguments[0])) {
     start = arguments[0]
     end = arguments[1]
     n = arguments[2]
