@@ -38,7 +38,7 @@ npm install ndarray-linspace
 An array of equally spaced values.
 
 **Arguments**:
-- `output` (options): if provided, the destination array to be filled with values. If the number of dimensions is greater than one, then the length of the first dimension must match the number of values and the entire ndarray will be filled with the linspace corresponding to the index of the first dimension.
+- `output` (optional): if provided, the destination array to be filled with values. If the number of dimensions is greater than one, then the length of the first dimension must match the number of values and the entire ndarray will be filled with the linspace corresponding to the index of the first dimension.
 - `start`: starting value of the interval
 - `end`: ending value of the interval
 - `steps`: number of divisions
