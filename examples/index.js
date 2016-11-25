@@ -1,7 +1,7 @@
-'use strict'
+'use strict';
 
-var linspace = require('../')
+var linspace = require('../');
 
-console.log(linspace(2, 3, 10, {endpoint: false}))
+console.log(linspace(2, 3, 10, {endpoint: false}));
 
-console.log(linspace(2, 4, 10, {dtype: 'int8'}))
+console.log(linspace(2, 4, 10, {dtype: 'int8'}));
