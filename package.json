@@ -1,6 +1,6 @@
 {
   "name": "ndarray-linspace",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Fill an ndarray with equally spaced values",
   "main": "index.js",
   "scripts": {
