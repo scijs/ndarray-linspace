@@ -1,6 +1,6 @@
 {
   "name": "ndarray-linspace",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Fill an ndarray with equally spaced values",
   "main": "index.js",
   "scripts": {
@@ -27,14 +27,9 @@
     "semistandard": "^9.1.0"
   },
   "dependencies": {
-    "is-positive-integer": "^1.1.1",
     "isndarray": "^1.0.0",
-    "ndarray": "^1.0.18",
     "ndarray-fill": "^1.0.1",
-    "ndarray-scratch": "^1.2.0",
-    "util-extend": "^1.0.1",
     "validate.io-boolean": "^1.0.4",
-    "validate.io-nonnegative-integer": "^1.0.0",
-    "validate.io-number": "^1.0.3"
+    "validate.io-nonnegative-integer": "^1.0.0"
   }
 }
