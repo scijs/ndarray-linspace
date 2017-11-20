@@ -1,73 +1,77 @@
-/* global describe, it */
 'use strict';
 
 var ndarray = require('ndarray');
 var ndt = require('ndarray-tests');
 var linspace = require('../');
-var assert = require('chai').assert;
-// var show = require('ndarray-show');
+var test = require('tape');
 
-describe('linspace', function () {
-  describe('failure modes', function () {
-    it('fails if the first argument is not a ndarray', function () {
-      assert.throws(function () {
-        linspace(0, 10);
-      }, Error, /must be a ndarray/);
-    });
+test('fails if the first argument is not a ndarray', function (t) {
+  t.throws(function () {
+    linspace(0, 10);
+  }, Error, /must be a ndarray/);
+  t.end();
+});
 
-    it('throws an error if the axis not a number', function () {
-      assert.throws(function () {
-        linspace(ndarray([], [2, 2]), 0, 1, {axis: '4'});
-      }, Error, 'Axis must be a nonegative integer');
-    });
+test('throws an error if the axis not a number', function (t) {
+  t.throws(function () {
+    linspace(ndarray([], [2, 2]), 0, 1, {axis: '4'});
+  }, Error, 'Axis must be a nonegative integer');
+  t.end();
+});
 
-    it('throws an error if the axis is greater than the dimension', function () {
-      assert.throws(function () {
-        linspace(ndarray([], [2, 2]), 0, 1, {axis: 4});
-      }, Error, 'must be <= dimension');
-    });
+test('throws an error if the axis is greater than the dimension', function (t) {
+  t.throws(function () {
+    linspace(ndarray([], [2, 2]), 0, 1, {axis: 4});
+  }, Error, 'must be <= dimension');
+  t.end();
+});
 
-    it('fails if the endpoint is not a boolean', function () {
-      assert.throws(function () {
-        linspace(ndarray([], [1]), 0, 10, {endpoint: 7});
-      }, Error, /must be a boolean/);
-    });
-  });
+test('fails if the endpoint is not a boolean', function (t) {
+  t.throws(function () {
+    linspace(ndarray([], [1]), 0, 10, {endpoint: 7});
+  }, Error, /must be a boolean/);
+  t.end();
+});
 
-  it('create a new linspace with an endpoint', function () {
-    var x = linspace(ndarray([], [11]), 0, 10);
-    var y = ndarray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-    assert(ndt.equal(x, y, 1e-8));
-  });
+test('create a new linspace with an endpoint', function (t) {
+  var x = linspace(ndarray([], [11]), 0, 10);
+  var y = ndarray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  t.assert(ndt.equal(x, y, 1e-8));
+  t.end();
+});
 
-  it('create a new linspace without an endpoint', function () {
-    var x = linspace(ndarray([], [10]), 0, 10, {endpoint: false});
-    var y = ndarray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
-    assert(ndt.equal(x, y, 1e-8));
-  });
+test('create a new linspace without an endpoint', function (t) {
+  var x = linspace(ndarray([], [10]), 0, 10, {endpoint: false});
+  var y = ndarray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  t.assert(ndt.equal(x, y, 1e-8));
+  t.end();
+});
 
-  it('fills in more than one dimension', function () {
-    var x = linspace(ndarray([], [2, 2]), 0, 1);
-    var y = ndarray([0, 0, 1, 1], [2, 2]);
-    assert(ndt.equal(x, y, 1e-8));
-  });
+test('fills in more than one dimension', function (t) {
+  var x = linspace(ndarray([], [2, 2]), 0, 1);
+  var y = ndarray([0, 0, 1, 1], [2, 2]);
+  t.assert(ndt.equal(x, y, 1e-8));
+  t.end();
+});
 
-  it('accepts a different axis', function () {
-    var x = linspace(ndarray([], [2, 2]), 0, 1, {axis: 1});
-    var y = ndarray([0, 1, 0, 1], [2, 2]);
-    assert(ndt.equal(x, y, 1e-8));
-  });
+test('accepts a different axis', function (t) {
+  var x = linspace(ndarray([], [2, 2]), 0, 1, {axis: 1});
+  var y = ndarray([0, 1, 0, 1], [2, 2]);
+  t.assert(ndt.equal(x, y, 1e-8));
+  t.end();
+});
 
-  it('uses the first point if only one point requested and endpoint = true', function () {
-    var x = linspace(ndarray([], [1]), 1, 2, {endpoint: true});
-    var y = ndarray([1], [1]);
-    assert(ndt.equal(x, y));
-  });
+test('uses the first point if only one point requested an endpoint = true', function (t) {
+  var x = linspace(ndarray([], [1]), 1, 2, {endpoint: true});
+  var y = ndarray([1], [1]);
+  t.assert(ndt.equal(x, y));
+  t.end();
+});
 
-  it('uses the first point if only one point requested and endpoint = false', function () {
-    var x = linspace(ndarray([], [1]), 1, 2, {endpoint: false});
-    var y = ndarray([1], [1]);
-    assert(ndt.equal(x, y));
-  });
+test('uses the first point if only one point requested an endpoint = false', function (t) {
+  var x = linspace(ndarray([], [1]), 1, 2, {endpoint: false});
+  var y = ndarray([1], [1]);
+  t.assert(ndt.equal(x, y));
+  t.end();
 });
 

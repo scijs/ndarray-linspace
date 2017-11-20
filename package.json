@@ -4,7 +4,7 @@
   "description": "Fill an ndarray with equally spaced values",
   "main": "index.js",
   "scripts": {
-    "test": "semistandard && mocha test/*",
+    "test": "semistandard && node test/index.js",
     "lint": "semistandard",
     "lint-fix": "semistandard --fix"
   },
@@ -19,12 +19,12 @@
   "author": "Ricky Reusser",
   "license": "MIT",
   "devDependencies": {
-    "chai": "^3.4.1",
-    "mocha": "^2.3.4",
+    "assert": "^1.4.1",
     "ndarray": "^1.0.18",
     "ndarray-show": "^2.0.0",
     "ndarray-tests": "^1.3.0",
-    "semistandard": "^9.1.0"
+    "semistandard": "^9.1.0",
+    "tape": "^4.8.0"
   },
   "dependencies": {
     "isndarray": "^1.0.0",

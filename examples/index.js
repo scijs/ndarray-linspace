@@ -2,7 +2,8 @@
 
 var ndarray = require('ndarray');
 var linspace = require('../');
+var show = require('ndarray-show');
 
-console.log(linspace(ndarray([], [2]), 3, 10, {endpoint: false}));
+console.log(show(linspace(ndarray([], [2]), 3, 10, {endpoint: false})));
 
-console.log(linspace(ndarray([], [2]), 4, 10, {dtype: 'int8'}));
+console.log(show(linspace(ndarray([], [2]), 4, 10, {dtype: 'int8'})));
