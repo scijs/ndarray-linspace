@@ -12,13 +12,13 @@ linspace(ndarray([], [5]), 2, 3);
 // => ndarray([2, 2.25, 2.5, 2.75, 3])
 
 linspace(ndarray([], [5]), 2, 3, {endpoint: false});
-// => ndarray([2, 2.25, 2.5, 2.75])
+// => ndarray([2, 2.2, 2.4, 2.6, 2.8])
 
-linspace(ndarray([], [2, 2]), 0, 1)
+linspace(ndarray([], [2, 2]), 0, 1);
 // y => [ 0, 0 ]
 //      [ 1, 1 ]
 
-linspace(ndarray([], [2, 2]), 0, 1, {axis: 1})
+linspace(ndarray([], [2, 2]), 0, 1, {axis: 1});
 // y => [ 0, 1 ]
 //      [ 0, 1 ]
 ```

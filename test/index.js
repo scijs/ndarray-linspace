@@ -34,14 +34,14 @@ describe('linspace', function () {
     });
   });
 
-  it('create a new linspace with and endpoint', function () {
+  it('create a new linspace with an endpoint', function () {
     var x = linspace(ndarray([], [11]), 0, 10);
     var y = ndarray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
     assert(ndt.equal(x, y, 1e-8));
   });
 
-  it('create a new linspace without and endpoint', function () {
-    var x = linspace(ndarray([], [10]), 0, 9, {endpoint: false});
+  it('create a new linspace without an endpoint', function () {
+    var x = linspace(ndarray([], [10]), 0, 10, {endpoint: false});
     var y = ndarray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
     assert(ndt.equal(x, y, 1e-8));
   });

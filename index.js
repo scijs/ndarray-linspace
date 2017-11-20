@@ -21,7 +21,7 @@ function linspace (output, start, end, options) {
   if (options.endpoint !== undefined && !isbool(options.endpoint)) {
     throw new Error('ndarray-linspace: Endpoint must be a boolean. Got ' + options.endpoint);
   }
-  endpoint = !!(options.endpoint || true);
+  endpoint = options.endpoint === undefined ? true : options.endpoint;
 
   if (options.axis !== undefined && !isnonneg(options.axis)) {
     throw new Error('ndarray-linspace: Axis must be a nonegative integer. Got ' + options.axis);
